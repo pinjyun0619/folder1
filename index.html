@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Letter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onclick="goNext()">
+
+  <div class="container">
+    <img src="letter4.png" alt="封閉信封" class="envelope" id="closed">
+    <img src="letter1.png" alt="打開信封" class="envelope open" id="opened">
+    <button class="open-btn" id="btn" onclick="openLetter(event)">OPEN</button>
+  </div>
+
+  <script>
+  let opened = false;
+
+  function openLetter(e) {
+    e.stopPropagation(); // 防止點擊 OPEN 時觸發跳轉
+
+    document.getElementById("closed").style.opacity = 0;
+    document.getElementById("opened").style.opacity = 1;
+    document.getElementById("btn").style.display = "none";
+    opened = true;
+  }
+
+  function goNext() {
+    if (opened) {
+      // 跳轉到下一個頁面
+      window.location.href = "s12.html"; // 請確認這個檔案存在
+    }
+  }
+</script>
+
+</body>
+</html>
